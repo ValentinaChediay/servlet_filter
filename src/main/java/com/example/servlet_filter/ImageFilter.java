@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebFilter(urlPatterns = { "*.png", "*.jpg", "*.gif" }, initParams = {
-        @WebInitParam(name = "notFoundImage", value = "images/image-not-found.png") })
+        @WebInitParam(name = "notFoundImage", value = "image-not-found.png") })
 public class ImageFilter implements Filter {
 
     private String notFoundImage;
@@ -46,7 +46,6 @@ public class ImageFilter implements Filter {
 
         // Абсолютная ссылка исходной папки WebApp (WebContent).
         String realRootPath = request.getServletContext().getRealPath("");
-
         // Абсолютная ссылка к файлу изображения.
         String imageRealPath = realRootPath + servletPath;
 
